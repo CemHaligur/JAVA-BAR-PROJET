@@ -21,6 +21,8 @@ d’alcool.
 Pour créer son cocktail il suffit de suivre le menu intégré au programme.
 Lors de la selection des boissons, le cocktail recoit 5ml de chaque boisson, c'est
 ainsi que la contenance d'une boisson est calculée.
+Le prix du cocktail se calcule à partir des boissons qui le compose.
+On multiplie par 1.1 le prix de chaque boisson, puis on additionne les prix de chaque boisson.
 
 
 ### • Gestion du bar
