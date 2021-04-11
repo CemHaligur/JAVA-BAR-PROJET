@@ -11,10 +11,10 @@ java -jar PROJETBARFINAL.jar
 
 On veut créer un logiciel pour gérer un bar à cocktails.
 L’élément de base du bar est une Boisson qui aura un nom, une contenance et un prix. 
- 	Certaines boissons sont alcoolisées (BoissonAlcoolisee) et auront en plus un degré
-	d’alcool.
- 	Les boissons non alcoolisées (BoissonNonAlcoolisee) auront un degré de sucre et non
-	d’alcool.
+- Certaines boissons sont alcoolisées (BoissonAlcoolisee) et auront en plus un degré
+d’alcool.
+- Les boissons non alcoolisées (BoissonNonAlcoolisee) auront un degré de sucre et non
+d’alcool.
 
 ### • Creer son cocktail
 
