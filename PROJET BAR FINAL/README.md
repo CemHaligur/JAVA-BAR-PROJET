@@ -36,6 +36,9 @@ la création des cocktails.
 
 ### 📸 Screenshots 
 
+![](img/MENU.PNG "screen")
+![](img/BARMANMANAGER.png "screen")
+
 
 ### 👨🏾‍💻👨🏼‍💻 Auteurs
 [CEM HALIGUR]
