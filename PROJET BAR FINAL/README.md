@@ -3,6 +3,8 @@
 
 ### ⚙ Comment l'executer ?
 
+Ouvrir votre console cmd en administrateur.
+Puis tapper cd C:/repertoire du programme
 java -jar PROJETBARFINAL.jar
 
 ### • Bienvenue dans le bar
