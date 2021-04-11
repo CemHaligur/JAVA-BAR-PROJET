@@ -1,4 +1,4 @@
-# Bar à Cocktail - JAVA #Equipe1GMI1 CEM HALIGUR / DJENAOUI SELENA / BENLAIFAOUI RAYANE / BONACORSI JOSHUA
+# Bar à Cocktail - JAVA #Equipe1GMI1
 
 
 ### ⚙ Comment l'executer ?
