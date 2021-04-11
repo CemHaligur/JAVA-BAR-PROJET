@@ -3,7 +3,7 @@
 
 ### ⚙ Comment l'executer ?
 
-java -jar PROJETBARFINAL.jar [paramètres]
+java -jar PROJETBARFINAL.jar
 
 ### • Bienvenue dans le bar
 
