@@ -36,8 +36,8 @@ la création des cocktails.
 
 ### 📸 Screenshots 
 
-![](img/MENU.PNG "screen")
-![](img/BARMANMANAGER.png "screen")
+![](img/MENU.png "Menu")
+![](img/BARMANMANAGER.png "Barman Manager")
 
 
 ### 👨🏾‍💻👨🏼‍💻 Auteurs
