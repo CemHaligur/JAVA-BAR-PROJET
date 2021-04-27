@@ -262,6 +262,7 @@ public class Barman implements Serializable{
                         boissonAlcoolisee nouveauB = new boissonAlcoolisee(nouveaunom, prix, contenance, degreAlcool);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
                     }  else if (valeur == 2) {
                         double nouveaudegrealcool = lireDouble("VEUILLEZ SAISIR LE NOUVEAU DEGRE D'ALCOOL : ");
                         boissonAlcoolisee b = (boissonAlcoolisee) Carte.get(choix3);
@@ -272,6 +273,8 @@ public class Barman implements Serializable{
                         boissonAlcoolisee nouveauB = new boissonAlcoolisee(nom, prix, contenance, nouveaudegrealcool);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     } else if (valeur == 4) {
                         double nouveauprix = lireDouble("VEUILLEZ SAISIR LE NOUVEAU PRIX : ");
                         boissonAlcoolisee b = (boissonAlcoolisee) Carte.get(choix3);
@@ -282,6 +285,8 @@ public class Barman implements Serializable{
                         boissonAlcoolisee nouveauB = new boissonAlcoolisee(nom, nouveauprix, contenance, degreAlcool);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     } else if (valeur == 3){
                         int quantite = lireInt("VEUILLEZ SAISIR LA NOUVELLE QUANTITÉ : ");
                         boissonAlcoolisee b = (boissonAlcoolisee) Carte.get(choix3);
@@ -292,11 +297,13 @@ public class Barman implements Serializable{
                         boissonAlcoolisee nouveauB = new boissonAlcoolisee(nom, prix, contenance, degreAlcool);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     }
 
                 } else if (isBoissonNonAlco.contains(dechiffrer)) {
                     System.out.println("**************************************************************************************************************************");
-                    System.out.println((boissonAlcoolisee) Carte.get(choix3));
+                    System.out.println((boissonNonAlcoolisee) Carte.get(choix3));
                     System.out.println("**************************************************************************************************************************");
                     int valeur = lireInt("[°① : LE NOM°]              [°② : DEGRÉ DE SUCRE°]              [°③ : QUANTITÉ°]              [°④ : PRIX°]");
                     if (valeur == 1) {
@@ -309,6 +316,8 @@ public class Barman implements Serializable{
                         boissonNonAlcoolisee nouveauB = new boissonNonAlcoolisee(nouveaunom, prix, contenance, degreSucre);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     }  else if (valeur == 2) {
                         double nouveaudegresucre = lireDouble("VEUILLEZ SAISIR LE NOUVEAU DEGRE DE SUCRE : ");
                         boissonNonAlcoolisee b = (boissonNonAlcoolisee) Carte.get(choix3);
@@ -319,6 +328,8 @@ public class Barman implements Serializable{
                         boissonNonAlcoolisee nouveauB = new boissonNonAlcoolisee(nom, prix, contenance, nouveaudegresucre);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     } else if (valeur == 4) {
                         double nouveauprix = lireDouble("VEUILLEZ SAISIR LE NOUVEAU PRIX : ");
                         boissonNonAlcoolisee b = (boissonNonAlcoolisee) Carte.get(choix3);
@@ -329,6 +340,8 @@ public class Barman implements Serializable{
                         boissonNonAlcoolisee nouveauB = new boissonNonAlcoolisee(nom, nouveauprix, contenance, degreSucre);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     } else if (valeur == 3){
                         int quantite = lireInt("VEUILLEZ SAISIR LA NOUVELLE QUANTITÉ : ");
                         boissonAlcoolisee b = (boissonAlcoolisee) Carte.get(choix3);
@@ -339,6 +352,8 @@ public class Barman implements Serializable{
                         boissonAlcoolisee nouveauB = new boissonAlcoolisee(nom, prix, contenance, degreAlcool);
                         stockBoisson.put(nouveauB, quantite);
                         stockBoisson.remove(b);
+                        ajouterBoissonManager();
+
                     }
                 }
             }
@@ -356,6 +371,7 @@ public class Barman implements Serializable{
                 if (choix > nombreCocktail) {
                     Boisson b = (Boisson) Carte.get(choix4);
                     RetirerBoissonStock(b, quantite);
+                    Barman.ajouterBoissonManager();
                 }
             }
         }
@@ -711,7 +727,6 @@ public class Barman implements Serializable{
     public static void writeJSONBoissonsStock(HashMap<Boisson,Integer> StockStock) throws IOException {
         JSONObject obj=new JSONObject();
 
-
         //** Séparé les alccol et les sucré
         ArrayList<boissonAlcoolisee> Ba = new ArrayList<boissonAlcoolisee>();
         ArrayList<boissonNonAlcoolisee> Bs = new ArrayList<boissonNonAlcoolisee>();
@@ -723,7 +738,6 @@ public class Barman implements Serializable{
                 Bs.add((boissonNonAlcoolisee) b);
             }
         }
-
 
         JSONArray liste_BoissonsAlcoolisee=new JSONArray();
         for(boissonAlcoolisee b: Ba){
@@ -737,7 +751,7 @@ public class Barman implements Serializable{
         obj.put("boissonAlcoolisee",liste_BoissonsAlcoolisee);
 
         JSONArray liste_BoissonsNonAlcoolisee=new JSONArray();
-        for(boissonNonAlcoolisee b: Bs){
+        for(boissonNonAlcoolisee b : Bs){
             JSONObject obj_interne=new JSONObject();
             obj_interne.put("nom",b.getNom());
             obj_interne.put("prixMl",(double) b.getPrix());
